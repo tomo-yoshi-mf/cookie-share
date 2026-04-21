@@ -47,3 +47,17 @@ To change the target port, open the popup and update the **Localhost Port** fiel
 
 - Google Chrome (Manifest V3)
 - Developer mode enabled in `chrome://extensions`
+
+## Security Notes
+
+### The extension itself
+- **Strong permissions** — This extension has access to cookies on all sites (`<all_urls>`). Only install it from source code you can review yourself (i.e. by cloning this repository).
+- **Never install from unknown sources** — Do not install `.crx` files or extensions from people you don't trust.
+
+### Handling copied cookies
+- **Session tokens are included** — Cookies often contain login session tokens. Make sure the localhost app receiving them is trustworthy.
+- **Clean up when done** — Delete localhost cookies after use via DevTools → Application → Cookies.
+- **Prefer staging over production** — Avoid copying cookies from production sites when staging environments are available.
+
+### Team distribution
+- **This repository is public** — No secrets are stored in the code, but be aware that your team's workflow is visible.
