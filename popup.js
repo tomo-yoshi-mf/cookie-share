@@ -1,28 +1,5 @@
-const DEFAULT_PORT = 3000;
-
-const portInput = document.getElementById("port");
-const saveButton = document.getElementById("save");
 const copyButton = document.getElementById("copy");
 const statusEl = document.getElementById("status");
-
-// Load saved port on open
-chrome.storage.sync.get("localhostPort", ({ localhostPort }) => {
-  portInput.value = localhostPort ?? DEFAULT_PORT;
-});
-
-saveButton.addEventListener("click", () => {
-  const raw = portInput.value.trim();
-  const port = parseInt(raw, 10);
-
-  if (!raw || isNaN(port) || port < 1 || port > 65535) {
-    showStatus("Enter a valid port (1–65535).", "error");
-    return;
-  }
-
-  chrome.storage.sync.set({ localhostPort: port }, () => {
-    showStatus(`Saved — localhost:${port}`);
-  });
-});
 
 copyButton.addEventListener("click", async () => {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });

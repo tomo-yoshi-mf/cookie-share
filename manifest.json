@@ -5,7 +5,6 @@
   "description": "Copy cookies from any website to your localhost",
   "permissions": [
     "cookies",
-    "storage",
     "tabs"
   ],
   "host_permissions": [

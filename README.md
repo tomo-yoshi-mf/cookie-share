@@ -22,11 +22,7 @@ When you're developing locally and need to replicate a logged-in session from a 
 2. Click the 🍪 icon in the Chrome toolbar
 3. Click **Copy Cookies to localhost**
 
-Cookies are copied to `http://localhost:3000` by default.
-
-## Configuration
-
-To change the target port, open the popup and update the **Localhost Port** field, then click **Save**.
+Cookies are copied to `http://localhost`.
 
 ## How It Works
 
@@ -39,7 +35,6 @@ To change the target port, open the popup and update the **Localhost Port** fiel
 | Permission | Reason |
 |------------|--------|
 | `cookies` | Read and write browser cookies |
-| `storage` | Persist the configured port number |
 | `tabs` | Get the active tab's URL when the popup is used |
 | `host_permissions: <all_urls>` | Access cookies from any site |
 

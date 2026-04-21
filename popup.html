@@ -14,7 +14,7 @@
     }
 
     body {
-      width: 260px;
+      width: 240px;
       padding: 16px;
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 14px;
@@ -25,64 +25,10 @@
     h1 {
       font-size: 16px;
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
       gap: 6px;
-    }
-
-    label {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: #5f6368;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .port-row {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    input[type="number"] {
-      flex: 1;
-      padding: 8px 10px;
-      border: 1px solid #dadce0;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #202124;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    input[type="number"]:focus {
-      border-color: #1a73e8;
-    }
-
-    .btn-save {
-      padding: 8px 14px;
-      background: #f1f3f4;
-      color: #202124;
-      border: none;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.2s;
-    }
-
-    .btn-save:hover {
-      background: #e2e4e6;
-    }
-
-    .divider {
-      border: none;
-      border-top: 1px solid #f1f3f4;
-      margin: 14px 0;
     }
 
     .btn-copy {
@@ -122,15 +68,6 @@
 </head>
 <body>
   <h1>🍪 Cookie Share</h1>
-
-  <label for="port">Localhost Port</label>
-  <div class="port-row">
-    <input type="number" id="port" min="1" max="65535" placeholder="3000" />
-    <button class="btn-save" id="save">Save</button>
-  </div>
-
-  <hr class="divider" />
-
   <button class="btn-copy" id="copy">Copy Cookies to localhost</button>
   <div id="status"></div>
 
