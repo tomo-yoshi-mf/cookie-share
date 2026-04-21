@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Share</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 260px;
+      padding: 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      color: #202124;
+      background: #fff;
+    }
+
+    h1 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #5f6368;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .port-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    input[type="number"] {
+      flex: 1;
+      padding: 8px 10px;
+      border: 1px solid #dadce0;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #202124;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input[type="number"]:focus {
+      border-color: #1a73e8;
+    }
+
+    .btn-save {
+      padding: 8px 14px;
+      background: #f1f3f4;
+      color: #202124;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .btn-save:hover {
+      background: #e2e4e6;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #f1f3f4;
+      margin: 14px 0;
+    }
+
+    .btn-copy {
+      width: 100%;
+      padding: 10px;
+      background: #1a73e8;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: #1558b0;
+    }
+
+    .btn-copy:disabled {
+      background: #a8c7fa;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      text-align: center;
+      min-height: 18px;
+      color: #188038;
+    }
+
+    #status.error {
+      color: #d93025;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍪 Cookie Share</h1>
+
+  <label for="port">Localhost Port</label>
+  <div class="port-row">
+    <input type="number" id="port" min="1" max="65535" placeholder="3000" />
+    <button class="btn-save" id="save">Save</button>
+  </div>
+
+  <hr class="divider" />
+
+  <button class="btn-copy" id="copy">Copy Cookies to localhost</button>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
